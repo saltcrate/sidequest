@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.db
+.wrangler/
+.venv/
+*.pem
+.env

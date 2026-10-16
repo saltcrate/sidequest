@@ -1,0 +1,26 @@
+app = "saltcrate-sidequest"
+primary_region = "ord"
+
+[build]
+
+[env]
+  PORT = "8080"
+  SIDEQUEST_DB = "/data/sidequest.db"
+  SIDEQUEST_STATE_DB = "/data/state.db"
+  MPP_REALM = "saltcrate-sidequest.fly.dev"
+  TEMPO_PRICE_RAW = "50000"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[mounts]]
+  source = "sidequest_data"
+  destination = "/data"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"

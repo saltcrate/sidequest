@@ -1,0 +1,9 @@
+mcp>=2.0
+httpx==0.28.1
+trafilatura==2.3.1
+beautifulsoup4==4.15.0
+lxml>=5.0
+pympp[tempo,sqlite]==0.14.0
+pydantic>=2.0
+# Optional: multi-instance replay store (RedisStore). Uncomment + set MPP_STORE=redis.
+# redis>=5.0
