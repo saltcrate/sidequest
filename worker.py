@@ -14,14 +14,14 @@ from __future__ import annotations
 import os
 
 import engine
-
 # Bounty floor per task type, in cents (card). Tempo/stablecoin counterpart is
-# set by TEMPO_PRICE_RAW. Defaults sit at the Stripe card floor ($0.50).
+# set by TEMPO_PRICE_RAW. Floors track the Oracle's own card price ($1.00) so a
+# Sidequest task never sells the worker below its cost.
 DEFAULT_BOUNTY_CENTS = {
-    "fetch": 50,
-    "check_link": 50,
-    "check_change": 50,
-    "verify": 50,
+    "fetch": 100,
+    "check_link": 100,
+    "check_change": 100,
+    "verify": 100,
 }
 
 WORKER_ID = os.environ.get("SIDEQUEST_WORKER_ID", "saltcrate-oracle")

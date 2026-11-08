@@ -134,7 +134,7 @@ def main() -> int:
         ch = b.get("challenges") or []
         check("has stripe challenge", any(c.get("method") == "stripe" for c in ch), str(ch)[:300])
         check("challenge has id+expires", all(c.get("id") and c.get("expires") for c in ch), str(ch)[:200])
-        check("challenge amount 50", any((c.get("request") or {}).get("amount") == "50" for c in ch), str(ch)[:300])
+        check("challenge amount 100", any((c.get("request") or {}).get("amount") == "100" for c in ch), str(ch)[:300])
         s, b = req(f"/v1/tasks/{tid}", "GET")
         check("task still pending", b.get("status") == "pending", str(b))
     finally:
